@@ -46,7 +46,7 @@
 
 @implementation CaptureViewController
 
-static NSString *UYLSegueToTableView = @"UYLSegueToTableView";
+static NSString *SegueToTableView = @"UYLSegueToTableView";
 
 #pragma mark -
 #pragma mark === Accessors ===
@@ -75,11 +75,6 @@ static NSString *UYLSegueToTableView = @"UYLSegueToTableView";
                 [device unlockForConfiguration];
             }
         }
-        
-        // The first time AVCaptureDeviceInput creation will present a dialog to the user
-        // requesting camera access. If the user refuses the creation fails.
-        // See WWDC 2013 session #610 for details, but note this behaviour does not seem to
-        // be enforced on iOS 7 where as it is with iOS 8.
         
         AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
         if (deviceInput)
@@ -110,7 +105,6 @@ static NSString *UYLSegueToTableView = @"UYLSegueToTableView";
         }
         else
         {
-            NSLog(@"Input Device error: %@",[error localizedDescription]);
             [self showAlertForCameraError:error];
         }
     }
@@ -163,7 +157,7 @@ static NSString *UYLSegueToTableView = @"UYLSegueToTableView";
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
-    if ([identifier isEqualToString:UYLSegueToTableView])
+    if ([identifier isEqualToString:SegueToTableView])
     {
         return [self.codeObjects count];
     }
@@ -173,7 +167,7 @@ static NSString *UYLSegueToTableView = @"UYLSegueToTableView";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:UYLSegueToTableView])
+    if ([segue.identifier isEqualToString:SegueToTableView])
     {
         TableViewController *viewController = segue.destinationViewController;
         viewController.codeObjects = self.codeObjects;
@@ -223,8 +217,6 @@ static NSString *UYLSegueToTableView = @"UYLSegueToTableView";
     if ((error.code == AVErrorApplicationIsNotAuthorizedToUseDevice) &&
         UIApplicationOpenSettingsURLString)
     {
-        // Starting with iOS 8 we can directly open the settings bundle
-        // for this App so add a settings button to the alert view.
         buttonTitle = NSLocalizedString(@"AlertViewSettingsButton", @"Settings");
     }
 
