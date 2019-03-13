@@ -1,24 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Code Reader View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="QRCodeReaderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEw-Zd-KqV">
+                                <rect key="frame" x="16" y="45" width="343" height="503"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QR Kod okuyucuyu calistirmak icin &quot;Baslat&quot; a tiklayin" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ij1-RA-O59">
+                                        <rect key="frame" x="50" y="166" width="243" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="PeK-Sm-iEr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Ij1-RA-O59" firstAttribute="top" secondItem="eEw-Zd-KqV" secondAttribute="top" constant="166" id="0Z1-aD-2K1"/>
+                                    <constraint firstItem="Ij1-RA-O59" firstAttribute="leading" secondItem="eEw-Zd-KqV" secondAttribute="leading" constant="50" id="Gbv-dw-TeU"/>
+                                    <constraint firstItem="Ij1-RA-O59" firstAttribute="centerX" secondItem="eEw-Zd-KqV" secondAttribute="centerX" id="hvq-Fw-m78"/>
+                                </constraints>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DkV-Qj-ZfM">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xJ1-fv-UuK"/>
+                                    <barButtonItem title="Baslat" id="1ME-xP-pei">
+                                        <connections>
+                                            <action selector="startStopReading:" destination="BYZ-38-t0r" id="do6-if-bAV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="prJ-a3-LS6"/>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QR Code okuyucu suan calismiyor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0S-kL-xzz">
+                                <rect key="frame" x="16" y="572" width="261" height="26"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="ept-To-fX2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.36862745099999999" green="0.76862745099999996" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eEw-Zd-KqV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="00k-EI-TYe"/>
+                            <constraint firstAttribute="bottom" secondItem="d0S-kL-xzz" secondAttribute="bottom" constant="69" id="7R0-ho-kL6"/>
+                            <constraint firstItem="eEw-Zd-KqV" firstAttribute="centerX" secondItem="DkV-Qj-ZfM" secondAttribute="centerX" id="8PN-4G-SbH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="d0S-kL-xzz" secondAttribute="trailing" symbolic="YES" id="L6j-Tf-iEc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eEw-Zd-KqV" secondAttribute="trailing" constant="16" id="VLm-p1-GBU"/>
+                            <constraint firstItem="d0S-kL-xzz" firstAttribute="top" secondItem="eEw-Zd-KqV" secondAttribute="bottom" constant="24" id="YGs-cu-njN"/>
+                            <constraint firstItem="eEw-Zd-KqV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="YJu-Jy-beR"/>
+                            <constraint firstItem="DkV-Qj-ZfM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZB6-Ai-Zwc"/>
+                            <constraint firstItem="DkV-Qj-ZfM" firstAttribute="top" secondItem="d0S-kL-xzz" secondAttribute="bottom" constant="25" id="rFR-Iw-6QI"/>
+                            <constraint firstItem="d0S-kL-xzz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="rTb-Ha-pbt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="previewView" destination="eEw-Zd-KqV" id="Qlw-qv-imb"/>
+                        <outlet property="startButton" destination="1ME-xP-pei" id="Otk-ku-8Ik"/>
+                        <outlet property="statusLabel" destination="d0S-kL-xzz" id="jrl-wN-qpU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="8.8000000000000007" y="6.746626686656672"/>
         </scene>
     </scenes>
 </document>

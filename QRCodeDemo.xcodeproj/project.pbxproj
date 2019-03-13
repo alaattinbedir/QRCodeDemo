@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8C2FAC122398AC000F7AA8A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C2FAC022398AC000F7AA8A /* AVFoundation.framework */; };
+		D8C2FAC322398AD100F7AA8A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C2FAC222398AD000F7AA8A /* CoreGraphics.framework */; };
+		D8C2FAC62239911D00F7AA8A /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D8C2FAC52239911D00F7AA8A /* beep.mp3 */; };
 		D8E07FBF22391B3700E4D617 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E07FBE22391B3700E4D617 /* AppDelegate.m */; };
-		D8E07FC222391B3700E4D617 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E07FC122391B3700E4D617 /* ViewController.m */; };
+		D8E07FC222391B3700E4D617 /* QRCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E07FC122391B3700E4D617 /* QRCodeReaderViewController.m */; };
 		D8E07FC522391B3700E4D617 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E07FC322391B3700E4D617 /* Main.storyboard */; };
 		D8E07FC722391B3E00E4D617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8E07FC622391B3E00E4D617 /* Assets.xcassets */; };
 		D8E07FCA22391B3E00E4D617 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E07FC822391B3E00E4D617 /* LaunchScreen.storyboard */; };
@@ -19,11 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D8C2FAC022398AC000F7AA8A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D8C2FAC222398AD000F7AA8A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D8C2FAC52239911D00F7AA8A /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
 		D8E07FBA22391B3700E4D617 /* QRCodeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E07FBD22391B3700E4D617 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D8E07FBE22391B3700E4D617 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D8E07FC022391B3700E4D617 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D8E07FC122391B3700E4D617 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D8E07FC022391B3700E4D617 /* QRCodeReaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderViewController.h; sourceTree = "<group>"; };
+		D8E07FC122391B3700E4D617 /* QRCodeReaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderViewController.m; sourceTree = "<group>"; };
 		D8E07FC422391B3700E4D617 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8E07FC622391B3E00E4D617 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8E07FC922391B3E00E4D617 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8C2FAC322398AD100F7AA8A /* CoreGraphics.framework in Frameworks */,
+				D8C2FAC122398AC000F7AA8A /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,8 +68,8 @@
 		D8C2FABD2239846F00F7AA8A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D8E07FC022391B3700E4D617 /* ViewController.h */,
-				D8E07FC122391B3700E4D617 /* ViewController.m */,
+				D8E07FC022391B3700E4D617 /* QRCodeReaderViewController.h */,
+				D8E07FC122391B3700E4D617 /* QRCodeReaderViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -75,11 +83,29 @@
 			path = Libs;
 			sourceTree = "<group>";
 		};
+		D8C2FABF22398AC000F7AA8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8C2FAC222398AD000F7AA8A /* CoreGraphics.framework */,
+				D8C2FAC022398AC000F7AA8A /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8C2FAC42239910C00F7AA8A /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				D8C2FAC52239911D00F7AA8A /* beep.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		D8E07FB122391B3700E4D617 = {
 			isa = PBXGroup;
 			children = (
 				D8E07FBC22391B3700E4D617 /* QRCodeDemo */,
 				D8E07FBB22391B3700E4D617 /* Products */,
+				D8C2FABF22398AC000F7AA8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +124,7 @@
 				D8C2FABD2239846F00F7AA8A /* Controllers */,
 				D8E07FDC2239353600E4D617 /* Categories */,
 				D8C2FABE2239849300F7AA8A /* Libs */,
+				D8C2FAC42239910C00F7AA8A /* Sounds */,
 				D8E07FC322391B3700E4D617 /* Main.storyboard */,
 				D8E07FC622391B3E00E4D617 /* Assets.xcassets */,
 				D8E07FC822391B3E00E4D617 /* LaunchScreen.storyboard */,
@@ -177,6 +204,7 @@
 			files = (
 				D8E07FCA22391B3E00E4D617 /* LaunchScreen.storyboard in Resources */,
 				D8E07FC722391B3E00E4D617 /* Assets.xcassets in Resources */,
+				D8C2FAC62239911D00F7AA8A /* beep.mp3 in Resources */,
 				D8E07FC522391B3700E4D617 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,7 +218,7 @@
 			files = (
 				D8E07FDA2239349B00E4D617 /* CIColor+QRCode.m in Sources */,
 				D8E07FDB2239349B00E4D617 /* NSString+Utils.m in Sources */,
-				D8E07FC222391B3700E4D617 /* ViewController.m in Sources */,
+				D8E07FC222391B3700E4D617 /* QRCodeReaderViewController.m in Sources */,
 				D8E07FD5223925FC00E4D617 /* QRCodeGenerator.m in Sources */,
 				D8E07FCD22391B3E00E4D617 /* main.m in Sources */,
 				D8E07FBF22391B3700E4D617 /* AppDelegate.m in Sources */,
