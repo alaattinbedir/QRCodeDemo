@@ -1,5 +1,5 @@
 //
-//  UYLCaptureViewController.h
+//  UYLWebViewController.m
 //  QReader
 //
 // Created by Keith Harrison http://useyourloaf.com
@@ -31,7 +31,24 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-#import <UIKit/UIKit.h>
+#import "WebViewController.h"
 
-@interface UYLCaptureViewController : UIViewController
+@interface WebViewController ()
+@property (nonatomic, weak) IBOutlet UIWebView *webView;
+@end
+
+@implementation WebViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+	self.title = [self.url absoluteString];
+    if (self.url)
+    {
+        NSURLRequest *request = [NSURLRequest requestWithURL:self.url];
+        [self.webView loadRequest:request];
+    }
+}
+
 @end

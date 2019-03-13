@@ -1,5 +1,5 @@
 //
-//  UYLWebViewController.h
+//  UYLCaptureViewController.h
 //  QReader
 //
 // Created by Keith Harrison http://useyourloaf.com
@@ -33,8 +33,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UYLWebViewController : UIViewController
-
-@property (nonatomic, copy) NSURL *url;
-
+@interface CaptureViewController : UIViewController
 @end

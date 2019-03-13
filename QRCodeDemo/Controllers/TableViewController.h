@@ -1,5 +1,5 @@
 //
-//  UYLWebViewController.m
+//  UYLTableViewController.h
 //  QReader
 //
 // Created by Keith Harrison http://useyourloaf.com
@@ -31,24 +31,10 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-#import "UYLWebViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface UYLWebViewController ()
-@property (nonatomic, weak) IBOutlet UIWebView *webView;
-@end
+@interface TableViewController : UITableViewController
 
-@implementation UYLWebViewController
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-	self.title = [self.url absoluteString];
-    if (self.url)
-    {
-        NSURLRequest *request = [NSURLRequest requestWithURL:self.url];
-        [self.webView loadRequest:request];
-    }
-}
+@property (nonatomic, copy) NSArray *codeObjects;
 
 @end

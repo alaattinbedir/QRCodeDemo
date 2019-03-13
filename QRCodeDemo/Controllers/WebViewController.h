@@ -1,5 +1,5 @@
 //
-//  UYLTableViewController.h
+//  UYLWebViewController.h
 //  QReader
 //
 // Created by Keith Harrison http://useyourloaf.com
@@ -33,8 +33,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UYLTableViewController : UITableViewController
+@interface WebViewController : UIViewController
 
-@property (nonatomic, copy) NSArray *codeObjects;
+@property (nonatomic, copy) NSURL *url;
 
 @end

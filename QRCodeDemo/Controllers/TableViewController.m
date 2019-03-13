@@ -32,17 +32,17 @@
 
 
 #import <AVFoundation/AVFoundation.h>
-#import "UYLTableViewController.h"
-#import "UYLWebViewController.h"
+#import "TableViewController.h"
+#import "WebViewController.h"
 #import "UYLTextCell.h"
 
-@interface UYLTableViewController ()
+@interface TableViewController ()
 
 @property (nonatomic, strong) UYLTextCell *prototypeCell;
 
 @end
 
-@implementation UYLTableViewController
+@implementation TableViewController
 
 static NSString *UYLTextCellIdentifier = @"UYLTextCell";
 static NSString *UYLSegueToWebView = @"UYLSegueToWebView";
@@ -145,7 +145,7 @@ static NSString *UYLSegueToWebView = @"UYLSegueToWebView";
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         AVMetadataMachineReadableCodeObject *codeObject = [self.codeObjects objectAtIndex:indexPath.row];
 
-        UYLWebViewController *viewController = segue.destinationViewController;
+        WebViewController *viewController = segue.destinationViewController;
         viewController.url = [self firstLinkInCodeObject:codeObject];
     }
 }

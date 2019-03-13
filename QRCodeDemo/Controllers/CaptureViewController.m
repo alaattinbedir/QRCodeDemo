@@ -32,10 +32,10 @@
 
 
 #import <AVFoundation/AVFoundation.h>
-#import "UYLCaptureViewController.h"
-#import "UYLTableViewController.h"
+#import "CaptureViewController.h"
+#import "TableViewController.h"
 
-@interface UYLCaptureViewController () <AVCaptureMetadataOutputObjectsDelegate, UIAlertViewDelegate>
+@interface CaptureViewController () <AVCaptureMetadataOutputObjectsDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
 @property (nonatomic, strong) CALayer *targetLayer;
@@ -44,7 +44,7 @@
 
 @end
 
-@implementation UYLCaptureViewController
+@implementation CaptureViewController
 
 static NSString *UYLSegueToTableView = @"UYLSegueToTableView";
 
@@ -175,7 +175,7 @@ static NSString *UYLSegueToTableView = @"UYLSegueToTableView";
 {
     if ([segue.identifier isEqualToString:UYLSegueToTableView])
     {
-        UYLTableViewController *viewController = segue.destinationViewController;
+        TableViewController *viewController = segue.destinationViewController;
         viewController.codeObjects = self.codeObjects;
     }
 }

@@ -166,7 +166,7 @@
         <!--Scan-->
         <scene sceneID="ITI-yi-nTg">
             <objects>
-                <viewController id="lkc-3j-8gL" customClass="UYLCaptureViewController" sceneMemberID="viewController">
+                <viewController id="lkc-3j-8gL" customClass="CaptureViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Ur-lZ-biu"/>
                         <viewControllerLayoutGuide type="bottom" id="r8M-05-6Ny"/>
@@ -195,7 +195,7 @@
         <!--Results-->
         <scene sceneID="zfK-8k-bfh">
             <objects>
-                <tableViewController id="suR-PR-Sgq" customClass="UYLTableViewController" sceneMemberID="viewController">
+                <tableViewController id="suR-PR-Sgq" customClass="TableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" id="doh-EE-RhM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
