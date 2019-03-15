@@ -16,6 +16,7 @@
 		D8C2FAD32239960600F7AA8A /* UYLTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C2FAD12239960600F7AA8A /* UYLTextCell.m */; };
 		D8C2FAD62239976F00F7AA8A /* QRCodeGeneratorController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C2FAD52239976F00F7AA8A /* QRCodeGeneratorController.m */; };
 		D8C2FAD92239998400F7AA8A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C2FAD82239998400F7AA8A /* MainViewController.m */; };
+		D8C2FB56223BCC1B00F7AA8A /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C2FB55223BCC1B00F7AA8A /* GameKit.framework */; };
 		D8E07FBF22391B3700E4D617 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E07FBE22391B3700E4D617 /* AppDelegate.m */; };
 		D8E07FC222391B3700E4D617 /* QRCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E07FC122391B3700E4D617 /* QRCodeReaderViewController.m */; };
 		D8E07FC522391B3700E4D617 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E07FC322391B3700E4D617 /* Main.storyboard */; };
@@ -43,6 +44,8 @@
 		D8C2FAD52239976F00F7AA8A /* QRCodeGeneratorController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeGeneratorController.m; sourceTree = "<group>"; };
 		D8C2FAD72239998400F7AA8A /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		D8C2FAD82239998400F7AA8A /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		D8C2FB54223BCC0E00F7AA8A /* QRCodeDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QRCodeDemo.entitlements; sourceTree = "<group>"; };
+		D8C2FB55223BCC1B00F7AA8A /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		D8E07FBA22391B3700E4D617 /* QRCodeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E07FBD22391B3700E4D617 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D8E07FBE22391B3700E4D617 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8C2FB56223BCC1B00F7AA8A /* GameKit.framework in Frameworks */,
 				D8C2FAC322398AD100F7AA8A /* CoreGraphics.framework in Frameworks */,
 				D8C2FAC122398AC000F7AA8A /* AVFoundation.framework in Frameworks */,
 			);
@@ -114,6 +118,7 @@
 		D8C2FABF22398AC000F7AA8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8C2FB55223BCC1B00F7AA8A /* GameKit.framework */,
 				D8C2FAC222398AD000F7AA8A /* CoreGraphics.framework */,
 				D8C2FAC022398AC000F7AA8A /* AVFoundation.framework */,
 			);
@@ -157,6 +162,7 @@
 		D8E07FBC22391B3700E4D617 /* QRCodeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D8C2FB54223BCC0E00F7AA8A /* QRCodeDemo.entitlements */,
 				D8C2FABC2239845600F7AA8A /* AppDelegate */,
 				D8C2FABD2239846F00F7AA8A /* Controllers */,
 				D8C2FAD0223995ED00F7AA8A /* Views */,
@@ -214,6 +220,14 @@
 				TargetAttributes = {
 					D8E07FB922391B3700E4D617 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.GameCenter.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -407,6 +421,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = QRCodeDemo/QRCodeDemo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KHRD8446CX;
 				INFOPLIST_FILE = QRCodeDemo/Info.plist;
@@ -416,6 +432,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alaattinbedir.QRCodeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -424,6 +441,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = QRCodeDemo/QRCodeDemo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KHRD8446CX;
 				INFOPLIST_FILE = QRCodeDemo/Info.plist;
@@ -433,6 +452,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alaattinbedir.QRCodeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
